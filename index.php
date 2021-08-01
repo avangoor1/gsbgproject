@@ -21,7 +21,7 @@
 			} else {
 				// Passed
 				$toEmail = 'ananya.vangoor@gmail.com';
-				$subject = 'H4 Dreamer Story Request From '.$name;
+				$subject = 'Coding Games Request Form '.$name;
 				$body = '<h2>Contact Request</h2>
 					<h4>Name</h4><p>'.$name.'</p>
 					<h4>Email</h4><p>'.$email.'</p>
