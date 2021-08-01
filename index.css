@@ -1,0 +1,792 @@
+/*---------------------------------------*/
+/* COMMON ELEMENTS*/
+/* 
+orange (light): #e67e22 
+orange (dark): #cf6d17
+*/
+ 
+/*///////////////////////////////////////*/
+/*---------------------------------------*/
+/* BASIC SETUP */
+/*---------------------------------------*/
+/*///////////////////////////////////////*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+*:focus{
+    outline: none;
+}
+ 
+html,
+body{
+    background-color: #fff;
+    color: #555;
+    font-family: "Lato", "Arial", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.scrolling-box {
+    scroll-behavior: smooth;
+}
+ 
+.clearfix{zoom: 1}
+.clearfix:after{
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+ 
+/*///////////////////////////////////////*/
+/*---------------------------------------*/
+/* REUSABLE COMPONENTS */
+/*---------------------------------------*/
+/*///////////////////////////////////////*/
+ 
+.row{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+ 
+section{
+    padding: 80px 0;
+}
+ 
+.box {
+    padding: 1%;
+}
+ 
+/*-------- Headings --------*/
+ 
+ 
+h1,
+h2,
+h3{
+    font-weight: 300;
+    text-transform: uppercase;
+}
+ 
+h1{
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 240%;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+}
+ 
+h2{
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+ 
+h2:after{
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+ 
+h3{
+    font-size: 110%;
+    margin-bottom: 15px;
+}
+
+h4{
+    font-size: 80%;
+    margin-top: 15px;
+}
+
+h6 {
+	font-size: 160%;
+	margin-top: 15px; 
+}
+
+/*-------- Paragraphs --------*/
+ 
+.long-copy{
+    line-height: 145%;
+    width: 80%; /* This is changed from 70 to 80 */
+    margin-left: 10%;  /* This is changed from 15 to 10 */
+}
+ 
+.box p{
+    font-size: 90%;
+    line-height: 145%;
+}
+ 
+ 
+/*-------- Icons --------*/
+ 
+ 
+ 
+.icon-big{
+    font-size: 350%;
+    display: block;
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+ 
+.icon-small{
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    color: #e67e22;
+    font-size: 120%;
+    margin-right: 10px;
+    
+    /*secrets to align text and icons*/
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+    
+ 
+/*-------- Links --------*/
+
+
+a:link,
+a:active,
+a:visited{
+    color: #e67e22;
+    text-decoration: none;
+    border-bottom: 1px solid #e67e22;
+    padding-bottom: 1px;
+    transition: border-bottom 0.2s, color 0.2s;
+}
+ 
+a:hover,
+a:active{
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+ 
+/*-------- Buttons --------*/
+ 
+.btn:link,
+.btn:visited,
+input[type=submit]{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    border: 1px solid #e67e22;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+ 
+.btn-full:link,
+.btn-full:visited,
+input[type=submit]{
+    background-color: #e67e22;
+    color: #fff;
+    margin-right: 15px;
+}
+ 
+.btn-ghost:link,
+.btn-ghost:visited{
+    color: #e67e22;
+}
+ 
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active{
+    background-color: #cf6d17;
+}
+ 
+.btn-full:hover,
+.btn-full:active,
+input[type=submit]:hover,
+input[type=submit]:active{
+    border: 1px solid #cf6d17;
+}
+ 
+.btn-ghost:hover,
+.btn-ghost:active{
+    color: #fff;
+    border: 1px solid #cf6d17;
+}
+
+/*///////////////////////////////////////*/
+/*---------------------------------------*/
+/* HEADER */
+/*---------------------------------------*/
+/*///////////////////////////////////////*/
+ 
+header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://coolbackgrounds.io/images/unsplash/samuel-zeller-medium-b832fe04.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+ 
+.hero-text-box{
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+ 
+.logo{
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+ 
+.logo-black{
+    display: none;
+    height: 50px;
+    width: auto;
+    float: left;
+    margin: 5px 0;
+}
+ 
+/*------- Main Navigation --------*/
+ 
+.main-navi {
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+}
+
+.main-navi li {
+    display: inline-block;
+    margin-left: 40px;
+    
+}
+
+.main-navi li a:link,
+.main-navi li a:visited {
+    padding: 8px 0px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+}
+
+.main-navi li a:hover,
+.main-navi li a:active {
+    border-bottom: 2px solid #e67e22;  
+}
+ 
+/*///////////////////////////////////////*/
+/*---------------------------------------*/
+/* MEALS */
+/*---------------------------------------*/
+/*///////////////////////////////////////*/
+ 
+.section-meals{
+    padding: 0;
+}
+ 
+.meals-showcase{
+    list-style: none;
+    width: 100%
+}
+ 
+.meals-showcase li{
+    display: block;
+    float: left;
+    width: 25%;      
+}
+ 
+.meal-photo{
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+ 
+.meal-photo img{
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    transform: scale(1.15);
+    transition: transform 0.5s, opacity 0.5s;
+}
+ 
+.meal-photo img:hover{
+    transform: scale(1.03);
+    opacity: 1;
+}
+
+/*///////////////////////////////////////*/
+/*---------------------------------------*/
+/* FEATURES */
+/*---------------------------------------*/
+/*///////////////////////////////////////*/
+ 
+.long-copy-2 {
+    line-height: 145%;
+    width: 80%; /* This is changed from 70 to 80 */
+    margin-left: 15%;  /* This is changed from 15 to 10 */
+	margin-bottom: 30px;
+}
+ 
+/*///////////////////////////////////////*/
+/*---------------------------------------*/
+/* HOW IT WORKS */
+/*---------------------------------------*/
+/*///////////////////////////////////////*/
+ 
+
+
+/*///////////////////////////////////////*/
+/*---------------------------------------*/
+/* Stories */
+/*---------------------------------------*/
+/*///////////////////////////////////////*/
+
+/*///////////////////////////////////////*/
+/*---------------------------------------*/
+/* Statistics */
+/*---------------------------------------*/
+/*///////////////////////////////////////*/
+.section-steps {
+	background-color: #f4f4f4;
+}
+/*///////////////////////////////////////*/
+/*---------------------------------------*/
+/* FORM */
+/*---------------------------------------*/
+/*///////////////////////////////////////*/
+ 
+.contact-form{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.section-form .long-copy{
+    margin-bottom: 30px;
+	margin-left: 
+}
+ 
+input[type=text],
+input[type=email],
+select,
+textarea{
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+ 
+textarea{
+    height: 100px;
+}
+ 
+input[type=checkbox]{
+    margin: 10px 5px 10px 0;
+}
+ 
+ 
+/*///////////////////////////////////////*/
+/*---------------------------------------*/
+/* FOOTER */
+/*---------------------------------------*/
+/*///////////////////////////////////////*/
+ 
+footer {
+    background-color: #333;
+    padding: 20px;
+    font-size: 80%;
+}
+ 
+.footer-nav{
+    list-style: none;
+    float: left;
+}
+ 
+.social-links{
+    list-style: none;
+    float: right;
+}
+ 
+.footer-nav li,
+.social-links li{
+    display: inline-block;
+    margin-right: 20px;
+}
+ 
+.footer-nav li:last-child,
+.social-links li:last-child{
+    margin-right: 0;
+}
+ 
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited{
+    text-decoration: none;
+    border: 0;
+    color: #888;
+    transition: color 0.2s;
+}
+ 
+.footer-nav li a:hover,
+.footer-nav li a:active{
+    color: #ddd;
+}
+ 
+.social-links li a:link,
+.social-links li a:visited{
+    font-size: 160%;
+}
+ 
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus,
+.ion-social-instagram{
+    transition: color 0.2s;
+}
+ 
+ 
+.ion-social-facebook:hover{
+    color: #3b5998;
+}
+ 
+.ion-social-twitter:hover{
+    color: #00aced;
+}
+ 
+.ion-social-googleplus:hover{
+    color: #dd4b39;
+}
+ 
+.ion-social-instagram:hover{
+    color: #517fa4;
+}
+ 
+ 
+footer p{
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/*------- Sticky Navigation --------*/
+ 
+.sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.98);
+	box-shadow: 0 2px 2px #efefef;
+	z-index: 9999;
+}
+
+.sticky .main-navi {
+    margin-top: 18px;
+}
+
+.sticky .main-navi li a:link,
+.sticky .main-navi li a:visited {
+    padding: 16px 0px;
+    color: #555;
+}
+
+.sticky .logo {
+	display: none;
+}
+
+.sticky .logo-black {
+	display: block;
+}
+ 
+/*///////////////////////////////////////*/
+/*---------------------------------------*/
+/* Modal Boxes */
+/*---------------------------------------*/
+/*///////////////////////////////////////*/
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: rgba(240, 132, 25, 0.94);
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #5f5f5f;
+	width: 80%;
+	height: 40%;
+}
+
+.close {
+	color: #fff;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+blockquote {
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+    margin-top: 40px;
+}
+ 
+ 
+blockquote:before {
+    content: "\201C";
+    font-size: 500%;
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+}
+
+/*imported css*/
+
+/* Left box under title; item in .flex-container */
+
+
+.flex-container-action {
+  display: flex;
+
+  padding: 0.5em 0;
+  align-items: center;
+
+  left: 5%;
+  right: 5%;
+
+  width: 100%;
+  padding-bottom:0px;
+
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: start;
+  /*border-style: dotted;*/ /*Uncomment to see the outline of the container*/
+}
+
+/* Left box under title; item in .flex-container */
+.action-info-container {
+  width: 100%;
+  margin-right: 5%;
+  margin-left: 0;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-right: 35px;
+  padding-left: 35px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-size: 16px;
+  flex-grow: 2;
+  /*border-style: dotted;*/ /*Uncomment to see the outline of the container*/
+}
+
+#script {
+  color: #43d6b9ff;
+}
+
+/* Right box under title; item in .flex-container */
+.action-list-container {
+  width: 75%;
+  padding: 35px;
+  margin: 5%;
+  flex-grow: 1;
+  background-color: #0d9c90;
+  /*border-style: dotted;*/ /*Uncomment to see the outline of the container*/
+}
+
+/* Holds all elements related to the action item list; inside the action-list-container */
+#checklist {
+  background-color: white;
+  border-radius: 15px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  border-style: solid;
+  border-color: #43d6b9ff;
+  /*border-style: dotted;*/ /*Uncomment to see the outline of the container*/
+}
+
+
+/* Header in the list container */
+#checklist-header {
+  text-align: center;
+  color: #0D38D3;
+  letter-spacing: 1px;
+  /*border-style: dotted;*/ /*Uncomment to see the outline of the container*/
+}
+
+/* Intructions inside the list container */
+#instructions {
+  font: 14px "Roboto", sans-serif;
+  text-align: center;
+  font-style: italic;
+  color: #0D38D3;
+  /*border-style: dotted;/*Uncomment to see the outline of the container*/
+  
+}
+
+/* The div container for the unordered action item list */
+#my-list {
+  padding: 10px 0 0 0;
+  margin: 0;
+  font-size: 10pt;
+}
+
+/* Styling for individual action list items */
+#my-list li {
+  cursor: pointer;
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-bottom: 8px; 
+  padding-left: 35px;
+  position: relative;
+  list-style-type: none;
+  transition: 0.2s;
+  width: 100%;
+  color: black;
+  word-spacing: 1px;
+  /*border-style: dotted;*/ /*Uncomment to see the outline of the container*/
+}
+
+/* Styling for the check squares added at the beginning of each list item */
+#my-list li::before {
+  content: "";
+  position: absolute;
+  border-color: #43d6b9ff;
+  border-style: solid;
+  border-width: 2px;
+  
+  top: 15px;
+  left: 13px;
+  height: 10px;
+  width: 10px;
+}
+
+/* Change background color when cursor hovers over list items */
+#my-list li:hover {
+  background: #f3f3f3;
+  color: #0D38D3;
+}
+
+/* Change check square color when cursor hovers over */
+#my-list li:hover::before {
+  border-color: #0D38D3;
+  border-style: solid;
+}
+
+/* When marked complete (i.e. clicked on) add strikethrough */
+#my-list li.all-done {
+  text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+#my-list li.all-done::before {
+  content: "";
+  position: absolute;
+  border-color: #0D38D3;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 5px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+
+/******************************************************/
+/** CHANGE TAKE-ACTION.HTML CSS BASED ON SCREEN SIZE **/
+/******************************************************/
+
+/* IF THE SCREEN IS ~~700 OR LESS~~ IMPLEMENT THESE RULES */
+
+@media only screen and (max-width: 700px) {
+
+  .flex-container-action {
+    flex-wrap: wrap;
+  }
+}
+
+/* IF THE SCREEN IS ~~701 OR MORE~~ IMPLEMENT THESE RULES */
+
+@media only screen and (min-width: 701px) {
+  
+  .flex-container-action {
+    flex-wrap: wrap;
+  }
+
+  .left-container {
+    width: 50%;
+    margin-right: 10%;
+  }
+}
+
+/* IF THE SCREEN IS ~~1000 OR MORE~~ IMPLEMENT THESE RULES */
+@media only screen and (min-width: 1000px) {
+
+  .flex-container-action {
+    flex-wrap: nowrap;
+  }
+}
+
+/* IF THE SCREEN IS ~~1250 OR MORE~~ IMPLEMENT THESE RULES */
+@media only screen and (min-width: 1250px) {
+  
+  .flex-container-action {
+    flex-wrap: nowrap;
+  }
+
+  #list-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px 20px 40px 40px;
+  }
+
+  .left-container {
+    width: 50%;
+    margin-right: 10%;
+  }
+}
+
+.text-center {
+    font-size: 100%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+	margin-top: 10px;
+}	
